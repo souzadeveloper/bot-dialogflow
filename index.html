@@ -1,44 +1,46 @@
 <html>
 <head>
-    <meta name="viewport" content="width-device-width, initial-scale=1">
-    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <title>Refactor Sistemas</title>
+  <meta name="viewport" content="width-device-width, initial-scale=1">
+  <link href="styles.css" rel="stylesheet" />
+  <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
-    <df-messenger
-      intent="WELCOME"
-      chat-title="Atendimento"
-      agent-id="b59d32ca-dc31-4fa0-b59b-b9640a15e012"
-      language-code="pt-br"
-      expand="true">
-    </df-messenger>
+  <div class="container">
+    <img src="Images/logo.png" width="280px" />
+  </div>
 
-    <script >
-        const dfMessenger = document.querySelector( 'df-messenger' );
+  <df-messenger 
+    intent="WELCOME" 
+    chat-title="Atendimento" 
+    agent-id="b59d32ca-dc31-4fa0-b59b-b9640a15e012"
+    language-code="pt-br" 
+    expand="true"
+    wait-open="true">
+  </df-messenger>
 
-        if ( dfMessenger )
-        {
-            dfMessenger.addEventListener( 'df-messenger-loaded', function( event )
-            {
-                //Enviando um Card personalizado
-                const payload = [
-                {
-                    "type": "info",
-                    "title": "Info item title",
-                    "subtitle": "Info item subtitle",
-                    "image": {
-                    "src": {
-                        "rawUrl": "Avatar.jpg"
-                    }
-                    },
-                    "actionLink": "https://example.com"
-                }];
-                dfMessenger.renderCustomCard(payload);
+  <!-- <script>
+    const dfMessenger = document.querySelector('df-messenger');
 
-            } );
-        }
-    </script>
-
-
+     if (dfMessenger) {
+      dfMessenger.addEventListener('df-messenger-loaded', function (event) {
+        //Enviando um Card personalizado
+        const payload = [
+          {
+            "type": "info",
+            "title": "Info item title",
+            "subtitle": "Info item subtitle",
+            "image": {
+              "src": {
+                "rawUrl": "Images/Avatar.jpg"
+              }
+            },
+            "actionLink": "https://example.com"
+          }];
+        dfMessenger.renderCustomCard(payload);
+      });
+    }
+  </script> -->
 </body>
 </html>
