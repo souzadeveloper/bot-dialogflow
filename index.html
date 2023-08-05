@@ -5,6 +5,16 @@
   <link href="styles.css" rel="stylesheet" />
   <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <style>
+    df-messenger {
+     --df-messenger-bot-message: #878fac;
+     --df-messenger-button-titlebar-color: #df9b56;
+     --df-messenger-chat-background-color: #fafafa;
+     --df-messenger-font-color: white;
+     --df-messenger-send-icon: #878fac;
+     --df-messenger-user-message: #479b3d;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
@@ -20,27 +30,17 @@
     wait-open="true">
   </df-messenger>
 
-  <!-- <script>
+  <script>
     const dfMessenger = document.querySelector('df-messenger');
 
      if (dfMessenger) {
       dfMessenger.addEventListener('df-messenger-loaded', function (event) {
-        //Enviando um Card personalizado
-        const payload = [
-          {
-            "type": "info",
-            "title": "Info item title",
-            "subtitle": "Info item subtitle",
-            "image": {
-              "src": {
-                "rawUrl": "Images/Avatar.jpg"
-              }
-            },
-            "actionLink": "https://example.com"
-          }];
-        dfMessenger.renderCustomCard(payload);
+        document.querySelector("df-messenger").shadowRoot
+        .querySelector("df-messenger-chat").shadowRoot
+        .querySelector("df-messenger-user-input").shadowRoot
+        .querySelector(".input-box-wrapper > input").placeholder = "Pergunte algo..." ;
       });
     }
-  </script> -->
+  </script>
 </body>
 </html>
